@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Mondo Owada - Character Introduction</title>
 		<link rel="stylesheet" href="mondo_styles.css" />
-		<script defer>
+		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const modal = document.getElementById('imageModal');
 				const modalImage = document.getElementById('modalImage');
@@ -88,7 +88,7 @@
 		</nav>
 
 		<!-- ====== MINI MUSIC PLAYER ====== -->
-		<div class="player">
+		<div class="player" style="position: fixed; right: 18px; bottom: 140px; z-index: 10000;">
 			<label>♪ BGM</label>
 			<div class="player-controls">
 				<button id="prevBtn" type="button" aria-label="Previous">◀</button>
@@ -97,10 +97,9 @@
 			</div>
 			<div class="player-meta">
 				<div id="trackTitle">Loading playlist…</div>
-				<select id="trackSelect" aria-label="Choose track"></select>
-			</div>
-			<audio id="bgAudio" preload="metadata"></audio>
-			<a href="../characters.html" class="back-btn">← Back to Characters</a>
+			<select id="trackSelect" aria-label="Choose track"></select>
+		</div>
+		<a href="../characters.html" class="back-btn">← Back to Characters</a>
 		</div>
 
 		<header>
@@ -181,6 +180,7 @@
 			<img id="modalImage" src="" alt="Enlarged image" class="modal-image" />
 		</div>
 
-		<script src="../js/music-character.js" defer></script>
+		<script src="../js/music-player.js" defer></script>
+		<script src="../js/monokuma-popup.js" defer></script>
 	</body>
 </html>

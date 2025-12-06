@@ -370,6 +370,7 @@ section {
 	user-select: none;
 	display: block !important;
 	visibility: visible !important;
+	cursor: move;
 }
 
 .player.dragging {
@@ -402,6 +403,8 @@ section {
 	font-size: 0.75rem;
 	font-weight: 700;
 	transition: 0.15s ease;
+	cursor: pointer;
+	user-select: none;
 }
 
 .player-controls button:hover {
@@ -424,8 +427,6 @@ section {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
 .player-meta select {
 	width: 100%;
 	padding: 4px 6px;
@@ -433,6 +434,9 @@ section {
 	border: 1px solid rgba(255, 76, 160, 0.3);
 	color: #f2f2f5;
 	border-radius: 4px;
+	font-size: 0.7rem;
+	cursor: pointer;
+}border-radius: 4px;
 	font-size: 0.7rem;
 }
 

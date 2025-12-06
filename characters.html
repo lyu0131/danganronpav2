@@ -6,6 +6,46 @@
   <title>Characters — Danganronpa: Trigger Happy Havoc</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/app.js" defer></script>
+  <style>
+    .characters-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .monokuma-spinner {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .monokuma-spinner a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .monokuma-spinner img {
+      width: 80px;
+      height: auto;
+      animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ====== TRUTH BULLET WHEEL ====== -->
@@ -19,7 +59,7 @@
   </nav>
 
   <!-- ====== MINI MUSIC PLAYER ====== -->
-  <div class="player">
+  <div class="player" style="position: fixed; right: 18px; bottom: 140px; z-index: 10000;">
     <label>♪ BGM</label>
     <div class="player-controls">
       <button id="prevBtn" type="button" aria-label="Previous">◀</button>
@@ -30,8 +70,7 @@
       <div id="trackTitle">Loading playlist…</div>
       <select id="trackSelect" aria-label="Choose track"></select>
     </div>
-    <audio id="bgAudio" preload="metadata"></audio>
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="index.html" class="back-btn">← Home</a>
   </div>
 
   <!-- ====== CHARACTERS PAGE ====== -->
@@ -41,7 +80,14 @@
       <p class="subtitle">Hover to peek a line; click any card to open a full profile page.</p>
       <div class="divider"></div>
       
-      <div class="grid" role="list">
+      <div class="characters-container">
+        <div class="monokuma-spinner">
+          <a href="character_pages/monokuma.html">
+            <img src="images/others/Crypt_of_the_Necrodancer_Monokuma_sprite.webp" alt="Monokuma" />
+          </a>
+        </div>
+        
+        <div class="grid" role="list">
         <!-- Makoto Naegi -->
         <article class="card" role="listitem">
           <a href="character_pages/makoto.html" target="_self">
@@ -194,10 +240,17 @@
         
       </div>
       
+        <div class="monokuma-spinner">
+          <a href="character_pages/monokuma.html">
+            <img src="images/others/Crypt_of_the_Necrodancer_Monokuma_sprite.webp" alt="Monokuma" />
+          </a>
+        </div>
+      </div>
+      
       <div class="divider"></div>
     </div>
   </section>
 
-  <script src="js/music.js" defer></script>
+  <script src="js/music-player.js" defer></script>
 </body>
 </html>

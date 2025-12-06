@@ -12,7 +12,9 @@
   <!-- ====== LOADING OVERLAY ====== -->
   <div class="loader" id="loader">
     <div class="loadbox">
-      <img class="monokuma" src="images/others/Crypt_of_the_Necrodancer_Monokuma_sprite.webp" alt="Monokuma" width="120" onerror="this.style.display='none'"/>
+      <a href="character_pages/monokuma.html" style="display: inline-block; cursor: pointer;">
+        <img class="monokuma" src="images/others/Crypt_of_the_Necrodancer_Monokuma_sprite.webp" alt="Monokuma" width="120" onerror="this.style.display='none'"/>
+      </a>
       <h1 class="loadtitle" id="loadText">Now Loading <span class="pinkblink">Hope…</span></h1>
       <div class="bar"><i id="barFill"></i></div>
       <div class="loadhint" id="loadHint">Tip: Truth Bullets are your navigation.</div>
@@ -30,7 +32,7 @@
   </nav>
 
   <!-- ====== MINI MUSIC PLAYER ====== -->
-  <div class="player">
+  <div class="player" style="position: fixed; right: 18px; bottom: 140px; z-index: 10000;">
     <label>♪ BGM</label>
     <div class="player-controls">
       <button id="prevBtn" type="button" aria-label="Previous">◀</button>
@@ -41,7 +43,6 @@
       <div id="trackTitle">Loading playlist…</div>
       <select id="trackSelect" aria-label="Choose track"></select>
     </div>
-    <audio id="bgAudio" preload="metadata"></audio>
     <a href="characters.html" class="back-btn">View All Characters</a>
   </div>
 
@@ -192,6 +193,7 @@
     <div class="divider"></div>
   </section>
 
-  <script src="js/music.js" defer></script>
+  <script src="js/music-player.js" defer></script>
+  <script src="js/monokuma-popup.js" defer></script>
 </body>
 </html>

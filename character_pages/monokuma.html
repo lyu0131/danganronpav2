@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Kiyotaka Ishimaru - Character Introduction</title>
-		<link rel="stylesheet" href="kiyotaka_styles.css" />
+		<title>Monokuma - Character Introduction</title>
+		<link rel="stylesheet" href="monokuma_styles.css" />
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const modal = document.getElementById('imageModal');
@@ -44,8 +44,8 @@
 				const switcherImage = document.getElementById('switcherImage');
 
 			const images = {
-				halfbody: '../images/halfbody/Kiyotaka_hb.png',
-				splash: '../images/splash_art/Kiyotaka_Ishimaru_sa.png'
+				halfbody: '../images/halfbody/Monokuma_hb.png',
+				splash: '../images/splash_art/Monokuma_sa.png'
 			};
 
 			switcher.forEach(btn => {
@@ -61,6 +61,29 @@
 						btn.classList.add('active');
 					});
 				});
+
+			// Concept Image Switcher
+			const conceptBtns = document.querySelectorAll('.concept-btn');
+			const conceptImage = document.getElementById('conceptImage');
+
+			const conceptImages = {
+				design1: '../images/concept/Monokuma_concept.png',
+				design2: '../images/concept/Monokuma_concept2.png'
+			};
+
+			conceptBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					const conceptType = btn.getAttribute('data-concept');
+					conceptImage.src = conceptImages[conceptType];
+					conceptImage.style.opacity = '0';
+					setTimeout(() => {
+						conceptImage.style.opacity = '1';
+					}, 10);
+
+					conceptBtns.forEach(b => b.classList.remove('active'));
+					btn.classList.add('active');
+				});
+			});
 
 				// Truth Bullet Wheel Navigation
 				const bullets = document.querySelectorAll('.wheel li');
@@ -103,9 +126,9 @@
 		</div>
 
 		<header>
-			<h1 class="title">Kiyotaka Ishimaru <span class="japanese">(石丸清多夏)</span></h1>
-			<p class="ultimate">Ultimate Moral Compass</p>
-			<p class="quote">"No matter how intensely the stormy seas may batter me, I will not fall as long as my feet are firmly planted! And if you can't do it alone, just find someone to support you, and you can support them back! That's how you can overcome any storm!"</p>
+			<h1 class="title">Monokuma <span class="japanese">(モノクマ)</span></h1>
+			<p class="ultimate">Headmaster</p>
+			<p class="quote">"Every human has regrets, has things they'd like to go back and change. But I don't! 'cause I'm a bear."</p>
 		</header>
 
 		<div class="switcher-buttons-wrapper">
@@ -118,7 +141,7 @@
 		<div class="profile-container">
 			<div class="profile-visual">
 				<div class="image-switcher">
-					<img id="switcherImage" src="../images/splash_art/Kiyotaka_Ishimaru_sa.png" alt="Kiyotaka Ishimaru" class="switcher-image" data-enlargeable />
+					<img id="switcherImage" src="../images/splash_art/Monokuma_sa.png" alt="Monokuma" class="switcher-image" data-enlargeable />
 				</div>
 			</div>
 
@@ -130,35 +153,35 @@
 					</div>
 					<div class="info-item">
 					<label>Height</label>
-					<p>176 cm</p>
+					<p>75 cm</p>
 					</div>
 					<div class="info-item">
 					<label>Weight</label>
-					<p>66 kg</p>
+					<p>???</p>
 					</div>
 					<div class="info-item">
 					<label>Birth Date</label>
-					<p>August 31</p>
+					<p>???</p>
 					</div>
 					<div class="info-item">
 						<label>Blood Type</label>
-						<p>O</p>
+						<p>???</p>
 					</div>
 				</div>
 
 				<div class="preferences">
 					<div class="pref-section">
 						<h3>Likes</h3>
-						<p>Discipline, Self-Improvement</p>
+						<p>???</p>
 					</div>
 					<div class="pref-section">
 						<h3>Dislikes</h3>
-						<p>Laziness, Moral Failures</p>
+						<p>???</p>
 					</div>
 				</div>
 
 				<div class="pref-section quote-box">
-					<p>"No matter how intensely the stormy seas may batter me, I will not fall as long as my feet are firmly planted! And if you can't do it alone, just find someone to support you, and you can support them back! That's how you can overcome any storm!"</p>
+					<p>"Every human has regrets, has things they'd like to go back and change. But I don't! 'cause I'm a bear."</p>
 				</div>
 			</div>
 		</div>
@@ -167,10 +190,16 @@
 			<div class="concept-content">
 			<div class="concept-text">
 				<h2>Character Concept</h2>
-				<p>Kiyotaka Ishimaru's design emphasizes <span class="pinkblink">discipline and unwavering order</span>. The <span class="pinkblink">crisp white gakuran with brass buttons and bold red armband</span> signal authority and rules, while the high collar and sharply pressed trousers form a rigid silhouette. Tall lace-up boots, a medal at the chest, and precise insignia reinforce a strict, institutional presence. <span class="pinkblink">Spiked hair and stern brows</span> project intensity and conviction. The <span class="pinkblink">restrained white, black, and red palette</span> keeps him clean and authoritative, presenting Taka as principled, uncompromising, and visually distinct from the looser styles of his peers.</p>
-				<p>Every element of his appearance communicates his foundational belief that structure and morality are inseparable. The <span class="pinkblink">institutional aesthetic</span> of his uniform transforms him into a symbol of order itself. His meticulously maintained appearance reflects his conviction that discipline is a moral imperative. Kiyotaka's design represents the embodiment of a leader whose strength derives from unwavering principles and righteous commitment.</p>
+				<p>Monokuma is based on the idea of <span class="pinkblink">guilty (黒, literally "black") and innocent (白, literally "white")</span>. His first beta design showcased him resembling an <span class="pinkblink">anatomy model commonly used in science courses</span>, with his "white" and "black" sides originally representing a fully skinned side and one that exposes muscle and organs. As the style of the game changed, the character was made <span class="pinkblink">cuter and he became a teddy bear instead</span>.</p>
+				<p>Another beta showcased Monokuma similarly to how he is now, with the exception of his bellybutton, the <span class="pinkblink">addition of paws with very notable claws</span>, and a slimmer body. His current design doesn't show his claws. On early design sketches featuring both his slimmer and final self, <span class="pinkblink">Monokuma was represented driving a car, carrying knives, or using them to chop</span>, showcasing a darker original vision that contrasts with his current cute appearance.</p>
 			</div>
-				<img src="../images/concept/Kiyotaka_Ishimaru_concept.png" alt="Kiyotaka concept art" class="concept-image" data-enlargeable />
+			<div class="concept-image-switcher">
+				<img id="conceptImage" src="../images/concept/Monokuma_concept.png" alt="Monokuma concept art" class="concept-image" data-enlargeable />
+				<div class="concept-switcher-buttons">
+					<button class="concept-btn active" data-concept="design1">Design 1</button>
+					<button class="concept-btn" data-concept="design2">Design 2</button>
+				</div>
+			</div>
 			</div>
 		</section>
 
