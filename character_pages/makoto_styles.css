@@ -662,6 +662,17 @@ header {
 	font-size: 1.05rem;
 }
 
+.quote-box {
+	grid-column: 1 / -1;
+	padding: 28px;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	color: var(--pink);
+	border-left: 3px solid var(--pink);
+}
+
 .character-concept {
 	min-height: 100vh;
 	margin: 0;

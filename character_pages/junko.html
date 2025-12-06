@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Makoto Naegi - Character Introduction</title>
-		<link rel="stylesheet" href="makoto_styles.css" />
+		<title>Junko Enoshima - Character Introduction</title>
+		<link rel="stylesheet" href="junko_styles.css" />
 		<script defer>
 			document.addEventListener('DOMContentLoaded', () => {
 				const modal = document.getElementById('imageModal');
@@ -43,12 +43,12 @@
 				const switcher = document.querySelectorAll('.switcher-btn');
 				const switcherImage = document.getElementById('switcherImage');
 
-		const images = {
-			halfbody: '../images/halfbody/Makoto_hb.png',
-			splash: '../images/splash_art/Makoto_Naegi_sa.png'
-		};
+			const images = {
+				halfbody: '../images/halfbody/Junko_hb.png',
+				splash: '../images/splash_art/Junko_Enoshima_sa.png'
+			};
 
-		switcher.forEach(btn => {
+			switcher.forEach(btn => {
 					btn.addEventListener('click', () => {
 						const imageType = btn.getAttribute('data-image');
 						switcherImage.src = images[imageType];
@@ -104,9 +104,9 @@
 		</div>
 
 		<header>
-			<h1 class="title">Makoto Naegi <span class="japanese">(苗木誠)</span></h1>
-			<p class="ultimate">Ultimate Lucky Student</p>
-			<p class="quote">"I'm going to keep moving forward, with hope in my heart."</p>
+			<h1 class="title">Junko Enoshima <span class="japanese">(江ノ島盾子)</span></h1>
+			<p class="ultimate">Ultimate Fashionista</p>
+			<p class="quote">"Hope is harmony. A just heart, moving toward the light. That is all. Despair is hope's polar opposite. It is messy and confusing. It swallows up love, hatred, and everything else. Because not knowing where you will end up is despair. Despair is even what you cannot predict. Only despair's unpredictability can save you from a boring future."</p>
 		</header>
 
 		<div class="switcher-buttons-wrapper">
@@ -119,7 +119,7 @@
 		<div class="profile-container">
 			<div class="profile-visual">
 				<div class="image-switcher">
-					<img id="switcherImage" src="../images/splash_art/Makoto_Naegi_sa.png" alt="Makoto Naegi" class="switcher-image" data-enlargeable />
+					<img id="switcherImage" src="../images/splash_art/Junko_Enoshima_sa.png" alt="Junko Enoshima" class="switcher-image" data-enlargeable />
 				</div>
 			</div>
 
@@ -127,50 +127,50 @@
 				<div class="info-grid">
 					<div class="info-item">
 						<label>Gender</label>
-						<p>Male</p>
+						<p>Female</p>
 					</div>
 					<div class="info-item">
 						<label>Height</label>
-						<p>160 cm</p>
+						<p>169 cm</p>
 					</div>
 					<div class="info-item">
 						<label>Weight</label>
-						<p>52 kg</p>
+						<p>45 kg</p>
 					</div>
 					<div class="info-item">
 						<label>Birth Date</label>
-						<p>February 5</p>
+						<p>December 24</p>
 					</div>
 					<div class="info-item">
 						<label>Blood Type</label>
-						<p>A</p>
+						<p>AB</p>
 					</div>
 				</div>
 
 				<div class="preferences">
 					<div class="pref-section">
 						<h3>Likes</h3>
-						<p>Curry, Trendy Things</p>
+						<p>Fashion, Attention</p>
 					</div>
 					<div class="pref-section">
 						<h3>Dislikes</h3>
-						<p>Dried mackerel, Dried bean curd</p>
+						<p>Boring Things, Modesty</p>
 					</div>
 				</div>
 
 				<div class="pref-section quote-box">
-					<p>"I'm going to keep moving forward, with hope in my heart."</p>
+					<p>"Hope is harmony. A just heart, moving toward the light. That is all. Despair is hope's polar opposite. It is messy and confusing. It swallows up love, hatred, and everything else. Because not knowing where you will end up is despair. Despair is even what you cannot predict. Only despair's unpredictability can save you from a boring future."</p>
 				</div>
 			</div>
 		</div>
 
 		<section class="character-concept">
 			<div class="concept-content">
-				<div class="concept-text">
-					<h2>Character Concept</h2>
-					<p>From the planning stages it was decided that Makoto <span class="pinkblink">should not have much individuality</span>, which made him difficult for character designer Rui Komatsuzaki to design compared to the other characters whose designs were more unique and distinct. Because the game was initially planned to be played from a third-person perspective from behind Makoto, he was designed wearing a hoodie with a distinctive decal on the hood to give players something to look at. His ahoge was added to give his hair some character, and he was deliberately made shorter than the other male characters in order to give him a <span class="pinkblink">'herbivore man'</span>-type image. His color scheme, though plain, were chosen because they were colors that Komatsuzaki particularly liked.</p>
-				</div>
-				<img src="../images/concept/Makoto_Naegi_concept.png" alt="Makoto concept art" class="concept-image" data-enlargeable />
+			<div class="concept-text">
+				<h2>Character Concept</h2>
+				<p>Junko's beta design for Danganronpa gave her a predominantly gold-yellow color scheme and a more stereotypical <span class="pinkblink">"girly"</span> appearance, with smaller pigtails worn lower on her head, a small necklace instead of a tie, and visible lipstick. As the game came closer to completion, Junko's design was tweaked to be similar to her final appearance, but with a <span class="pinkblink">red and black plaid tie</span> and without a white shirt under her cardigan. In an earlier version of the game, Junko was apparently planned to be one of the murder victims.</p>
+			</div>
+				<img src="../images/concept/Junko_Enoshima_concept.png" alt="Junko concept art" class="concept-image" data-enlargeable />
 			</div>
 		</section>
 
