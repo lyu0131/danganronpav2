@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Danganronpa Fan Hub</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/music-player.js" defer></script>
+  <script src="js/monokuma-popup.js" defer></script>
+</head>
+<body>
+  
+  <!-- ====== TRUTH BULLET WHEEL NAVIGATION ====== -->
+  <nav class="wheel">
+    <ul class="bullets">
+      <li class="b-about" data-href="index.html#about" title="About">About</li>
+      <li class="b-sns" data-href="index.html#sns" title="Social Links">SNS</li>
+      <li class="b-characters" data-href="characters.html" title="Characters">Cast</li>
+      <li class="b-gameplay" data-href="index.html#gameplay" title="Gameplay">Gameplay</li>
+      <li class="b-home" data-href="index.html" title="Home">Home</li>
+    </ul>
+  </nav>
+
+  <!-- ====== MINI MUSIC PLAYER ====== -->
+  <div class="player">
+    <label>♪ BGM</label>
+    <div class="player-controls">
+      <button id="prevBtn" type="button" aria-label="Previous">◀</button>
+      <button id="playPauseBtn" type="button" aria-label="Play/Pause">Play</button>
+      <button id="nextBtn" type="button" aria-label="Next">▶</button>
+    </div>
+    <div class="player-meta">
+      <div id="trackTitle">Loading playlist…</div>
+      <select id="trackSelect" aria-label="Choose track"></select>
+    </div>
+    <a href="index.html" class="back-btn">← Home</a>
+  </div>
+
+  <header>
+    <h1 class="title">Contact Us <span class="japanese">(お問い合わせ)</span></h1>
+    <p class="quote">"Let's keep the conversation alive!"</p>
+  </header>
+
+  <main class="form-container">
+    <section class="contact-intro">
+      <p>Have feedback, questions, or just want to share your love for Danganronpa? Send us a message!</p>
+    </section>
+
+    <form id="contactForm" action="submit-contact.php" method="post">
+      
+      <div class="form-group">
+        <label for="name">Your Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required aria-required="true" placeholder="Ultimate Student" />
+        <span class="error-message" id="nameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required aria-required="true" placeholder="hope@academy.com" />
+        <span class="error-message" id="emailError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="talent">Your Ultimate Talent</label>
+        <input type="text" id="talent" name="talent" placeholder="e.g., Ultimate Gamer" />
+      </div>
+
+      <div class="form-group">
+        <label for="character">Favorite Character <span class="required">*</span></label>
+        <select id="character" name="character" required aria-required="true">
+          <option value="">-- Select a character --</option>
+          <option value="makoto">Makoto Naegi</option>
+          <option value="sayaka">Sayaka Maizono</option>
+          <option value="leon">Leon Kuwata</option>
+          <option value="chihiro">Chihiro Fujisaki</option>
+          <option value="mondo">Mondo Owada</option>
+          <option value="kiyotaka">Kiyotaka Ishimaru</option>
+          <option value="hifumi">Hifumi Yamada</option>
+          <option value="celestia">Celestia Ludenberg</option>
+          <option value="sakura">Sakura Ogami</option>
+          <option value="aoi">Aoi Asahina</option>
+          <option value="toko">Toko Fukawa</option>
+          <option value="byakuya">Byakuya Togami</option>
+          <option value="yasuhiro">Yasuhiro Hagakure</option>
+          <option value="kyoko">Kyoko Kirigiri</option>
+          <option value="junko">Junko Enoshima</option>
+          <option value="monokuma">Monokuma</option>
+        </select>
+        <span class="error-message" id="characterError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">How would you rate this site? <span class="required">*</span></label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="rating" value="5" required aria-required="true" /> 
+            <span>★★★★★ Hope</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="4" /> 
+            <span>★★★★☆ Great</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="3" /> 
+            <span>★★★☆☆ Good</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="2" /> 
+            <span>★★☆☆☆ Okay</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="1" /> 
+            <span>★☆☆☆☆ Despair</span>
+          </label>
+        </div>
+        <span class="error-message" id="ratingError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Share your thoughts..."></textarea>
+        <span class="error-message" id="messageError"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="reset" class="reset-btn">Clear Form</button>
+      </div>
+
+    </form>
+
+    <div id="formSuccess" class="success-message" style="display: none;">
+      <h3>✓ Message Sent!</h3>
+      <p>Thank you for reaching out. We'll respond soon!</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Danganronpa Fan Hub | Not affiliated with Spike Chunsoft</p>
+  </footer>
+
+  <script>
+    // Form validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Clear previous errors
+      document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+      
+      let isValid = true;
+
+      // Validate name
+      const name = document.getElementById('name');
+      if (!name.value.trim()) {
+        document.getElementById('nameError').textContent = 'Name is required';
+        isValid = false;
+      }
+
+      // Validate email
+      const email = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) {
+        document.getElementById('emailError').textContent = 'Email is required';
+        isValid = false;
+      } else if (!emailPattern.test(email.value)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email';
+        isValid = false;
+      }
+
+      // Validate character selection
+      const character = document.getElementById('character');
+      if (!character.value) {
+        document.getElementById('characterError').textContent = 'Please select a character';
+        isValid = false;
+      }
+
+      // Validate rating
+      const rating = document.querySelector('input[name="rating"]:checked');
+      if (!rating) {
+        document.getElementById('ratingError').textContent = 'Please rate the site';
+        isValid = false;
+      }
+
+      // Validate message
+      const message = document.getElementById('message');
+      if (!message.value.trim()) {
+        document.getElementById('messageError').textContent = 'Message is required';
+        isValid = false;
+      }
+
+      if (isValid) {
+        // Show success message
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        
+        // In production, this would actually submit to the PHP file
+        // For now, just simulate success
+        console.log('Form would submit to:', this.action);
+      }
+    });
+
+    // Truth bullet navigation
+    document.querySelectorAll('.bullets li').forEach(bullet => {
+      bullet.addEventListener('click', function() {
+        const href = this.getAttribute('data-href');
+        if (href) window.location.href = href;
+      });
+    });
+  </script>
+</body>
+</html>
